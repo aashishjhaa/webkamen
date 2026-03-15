@@ -40,40 +40,101 @@ export default function App() {
 
       <main>
         {/* Hero Section */}
-        <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 text-center relative overflow-hidden z-0">
-          {/* Video Background */}
-          <div className="absolute inset-0 w-full h-full -z-20 overflow-hidden pointer-events-none bg-[#0B1218]">
-            <iframe
-              src="https://www.youtube.com/embed/WanyfYa1qF0?autoplay=1&mute=1&loop=1&playlist=WanyfYa1qF0&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-              className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 opacity-40 pointer-events-none"
-              allow="autoplay; encrypted-media"
-              frameBorder="0"
-            ></iframe>
-          </div>
+        <section className="min-h-screen pt-32 pb-20 px-6 relative overflow-hidden flex items-center">
+          {/* Architectural Grid Background */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#F2EBE008_1px,transparent_1px),linear-gradient(to_bottom,#F2EBE008_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] -z-10" />
           
-          {/* Overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1218]/80 via-[#0B1218]/60 to-[#0B1218] -z-10 pointer-events-none"></div>
-
           {/* Subtle background glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#F2EBE0]/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-5xl mx-auto relative z-10"
-          >
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.05] mb-6 md:mb-8">
-              Digital Excellence, <br className="hidden md:block" /> Crafted for Business.
-            </h1>
-            <p className="text-base sm:text-lg md:text-2xl opacity-70 max-w-2xl mx-auto mb-8 md:mb-12 font-light leading-relaxed">
-              We engineer elegant, high-performance web solutions that drive growth.
-            </p>
-            <a href="https://wa.me/919324365638" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 md:gap-3 bg-[#F2EBE0] text-[#0B1218] px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-base md:text-lg hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_rgba(242,235,224,0.15)]">
-              <WhatsAppIcon className="w-4 h-4 md:w-5 md:h-5" />
-              Start Your Project
-            </a>
-          </motion.div>
+          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#F2EBE0]/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+
+          <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative z-10"
+            >
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#F2EBE0]/5 border border-[#F2EBE0]/10 text-sm mb-8 backdrop-blur-md">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span className="opacity-80 font-medium tracking-wide uppercase text-xs">Available for new projects</span>
+              </div>
+              
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter leading-[1.05] mb-8">
+                We Build <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F2EBE0] to-[#F2EBE0]/40">
+                  Digital Futures.
+                </span>
+              </h1>
+              
+              <p className="text-lg md:text-xl opacity-70 max-w-xl mb-10 font-light leading-relaxed">
+                WK Digital engineers elegant, high-performance web solutions that drive growth and transform businesses into industry leaders.
+              </p>
+              
+              <div className="flex flex-wrap items-center gap-4">
+                <a href="https://wa.me/919324365638" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 md:gap-3 bg-[#F2EBE0] text-[#0B1218] px-8 py-4 rounded-full font-semibold text-base hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_rgba(242,235,224,0.15)]">
+                  <WhatsAppIcon className="w-5 h-5" />
+                  Start Your Project
+                </a>
+                <a href="#work" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium border border-[#F2EBE0]/20 hover:bg-[#F2EBE0]/10 transition-colors duration-300">
+                  View Our Work <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="relative hidden lg:flex justify-center items-center"
+            >
+              {/* Abstract Technical Graphic */}
+              <div className="relative w-[500px] h-[500px] flex items-center justify-center">
+                {/* Outer dashed ring */}
+                <div className="absolute inset-0 rounded-full border border-[#F2EBE0]/20 border-dashed animate-[spin_60s_linear_infinite]" />
+                {/* Middle solid ring */}
+                <div className="absolute inset-12 rounded-full border border-[#F2EBE0]/10 animate-[spin_40s_linear_infinite_reverse]" />
+                {/* Inner glow ring */}
+                <div className="absolute inset-24 rounded-full border border-[#F2EBE0]/5 bg-[#F2EBE0]/[0.02] backdrop-blur-3xl shadow-[inset_0_0_80px_rgba(242,235,224,0.05)]" />
+                
+                {/* Center Logo */}
+                <div className="relative z-10 w-32 h-32 bg-[#0B1218] border border-[#F2EBE0]/20 rounded-full flex items-center justify-center shadow-[0_0_60px_rgba(242,235,224,0.1)]">
+                  <WKLogo className="w-16 h-16 text-[#F2EBE0]" />
+                </div>
+
+                {/* Floating Elements */}
+                <motion.div 
+                  animate={{ y: [-10, 10, -10] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-1/4 -left-4 bg-[#0B1218]/80 backdrop-blur-md border border-[#F2EBE0]/20 px-5 py-3 rounded-2xl flex items-center gap-3 shadow-2xl"
+                >
+                  <div className="bg-[#F2EBE0]/10 p-2 rounded-lg">
+                    <Code className="w-5 h-5 text-[#F2EBE0]" />
+                  </div>
+                  <div>
+                    <p className="text-xs opacity-50 font-medium uppercase tracking-wider mb-0.5">Architecture</p>
+                    <p className="text-sm font-semibold">Clean Code</p>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  animate={{ y: [10, -10, 10] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute bottom-1/4 -right-4 bg-[#0B1218]/80 backdrop-blur-md border border-[#F2EBE0]/20 px-5 py-3 rounded-2xl flex items-center gap-3 shadow-2xl"
+                >
+                  <div className="bg-[#F2EBE0]/10 p-2 rounded-lg">
+                    <Zap className="w-5 h-5 text-[#F2EBE0]" />
+                  </div>
+                  <div>
+                    <p className="text-xs opacity-50 font-medium uppercase tracking-wider mb-0.5">Performance</p>
+                    <p className="text-sm font-semibold">Lightning Fast</p>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </section>
 
         {/* Philosophy Section */}
